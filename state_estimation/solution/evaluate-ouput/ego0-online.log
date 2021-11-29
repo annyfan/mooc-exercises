@@ -1,0 +1,851 @@
+Starting logs for service solution-ego0 -> container id 07f18018a89f072d6499ade39e6601f53753e081f260471b461e5215fdf2f3b7
+
+runner version: 6.2.40
+
+combined_log: /tmp/anny/duckietown/dt-challenges-runner/local-evals/mooc-state-estimation/21_11_29_03_32_57/sim.tmp/logs/solution-ego0/online.log
+
+2021-11-29T03:33:12.376279882Z ==> Entrypoint
+2021-11-29T03:33:12.395442221Z WARNING: Running in unprivileged mode, container's network will not be configured.
+2021-11-29T03:33:12.395453217Z WARNING: robot_type file does not exist. Using 'duckiebot' as default type.
+2021-11-29T03:33:12.395456106Z WARNING: robot_configuration file does not exist.
+2021-11-29T03:33:12.395460238Z WARNING: robot_hardware file does not exist.
+2021-11-29T03:33:12.398411674Z Forcing ROS_MASTER_URI=http://localhost:11311
+2021-11-29T03:33:12.618655948Z <== Entrypoint
+2021-11-29T03:33:12.918206370Z + dt-exec-BG roscore
+2021-11-29T03:33:12.918247852Z + cmd=roscore
+2021-11-29T03:33:12.918250721Z + eval 'stdbuf -o L roscore 1>&2 &'
+2021-11-29T03:33:12.918466668Z ++ stdbuf -o L roscore
+2021-11-29T03:33:12.918497743Z + dt-exec-BG roslaunch --wait car_interface all.launch veh:=agent
+2021-11-29T03:33:12.918501529Z + cmd='roslaunch --wait car_interface all.launch veh:=agent'
+2021-11-29T03:33:12.918504122Z + eval 'stdbuf -o L roslaunch --wait car_interface all.launch veh:=agent 1>&2 &'
+2021-11-29T03:33:12.918760980Z ++ stdbuf -o L roslaunch --wait car_interface all.launch veh:=agent
+2021-11-29T03:33:12.918773423Z + dt-exec-BG roslaunch --wait duckietown_demos lane_following.launch
+2021-11-29T03:33:12.918782738Z + cmd='roslaunch --wait duckietown_demos lane_following.launch'
+2021-11-29T03:33:12.918793198Z + eval 'stdbuf -o L roslaunch --wait duckietown_demos lane_following.launch 1>&2 &'
+2021-11-29T03:33:12.919049646Z + sleep 5
+2021-11-29T03:33:12.919058703Z ++ stdbuf -o L roslaunch --wait duckietown_demos lane_following.launch
+2021-11-29T03:33:14.112716092Z roscore/master is not yet running, will wait for it to start
+2021-11-29T03:33:14.112770393Z master has started, initiating launch
+2021-11-29T03:33:14.112776347Z ... logging to /tmp/log/14e4a49a-50c5-11ec-bfac-0242c0a88004/roslaunch-07f18018a89f-125.log
+2021-11-29T03:33:14.112779669Z Checking log directory for disk usage. This may take a while.
+2021-11-29T03:33:14.112782593Z Press Ctrl-C to interrupt
+2021-11-29T03:33:14.112785491Z Done checking log file disk usage. Usage is <1GB.
+2021-11-29T03:33:14.112788744Z ]2;/code/catkin_ws/src/dt-core/packages/duckietown_demos/launch/lane_following.launch
+2021-11-29T03:33:14.112791566Z [1mstarted roslaunch server http://192.168.128.4:35053/[0m
+2021-11-29T03:33:14.112794763Z 
+2021-11-29T03:33:14.112797614Z SUMMARY
+2021-11-29T03:33:14.112800548Z ========
+2021-11-29T03:33:14.112803454Z 
+2021-11-29T03:33:14.112806280Z PARAMETERS
+2021-11-29T03:33:14.112809176Z  * /agent/anti_instagram_node/color_balance_scale: 0.8
+2021-11-29T03:33:14.112812149Z  * /agent/anti_instagram_node/interval: 5
+2021-11-29T03:33:14.112830279Z  * /agent/anti_instagram_node/output_scale: 0.2
+2021-11-29T03:33:14.112833610Z  * /agent/fsm_node/events/joystick_override_off/msg_type: BoolStamped
+2021-11-29T03:33:14.112836675Z  * /agent/fsm_node/events/joystick_override_off/topic: joy_mapper_node/j...
+2021-11-29T03:33:14.112839592Z  * /agent/fsm_node/events/joystick_override_off/trigger: False
+2021-11-29T03:33:14.112846723Z  * /agent/fsm_node/events/joystick_override_on/msg_type: BoolStamped
+2021-11-29T03:33:14.112849943Z  * /agent/fsm_node/events/joystick_override_on/topic: joy_mapper_node/j...
+2021-11-29T03:33:14.112852996Z  * /agent/fsm_node/events/joystick_override_on/trigger: True
+2021-11-29T03:33:14.112856060Z  * /agent/fsm_node/events/obstacle_cleared/msg_type: BoolStamped
+2021-11-29T03:33:14.112859043Z  * /agent/fsm_node/events/obstacle_cleared/topic: road_anomaly_watc...
+2021-11-29T03:33:14.112862013Z  * /agent/fsm_node/events/obstacle_cleared/trigger: False
+2021-11-29T03:33:14.112864853Z  * /agent/fsm_node/events/obstacle_exists/msg_type: BoolStamped
+2021-11-29T03:33:14.112868033Z  * /agent/fsm_node/events/obstacle_exists/topic: road_anomaly_watc...
+2021-11-29T03:33:14.112870915Z  * /agent/fsm_node/events/obstacle_exists/trigger: True
+2021-11-29T03:33:14.112873772Z  * /agent/fsm_node/global_transitions/joystick_override_off: LANE_FOLLOWING
+2021-11-29T03:33:14.112876719Z  * /agent/fsm_node/global_transitions/joystick_override_on: NORMAL_JOYSTICK_C...
+2021-11-29T03:33:14.112879506Z  * /agent/fsm_node/initial_state: NORMAL_JOYSTICK_C...
+2021-11-29T03:33:14.112882336Z  * /agent/fsm_node/nodes/anti_instagram: anti_instagram_no...
+2021-11-29T03:33:14.112885374Z  * /agent/fsm_node/nodes/decoder_node: decoder_node/switch
+2021-11-29T03:33:14.112890824Z  * /agent/fsm_node/nodes/framerate_high: camera_node/frame...
+2021-11-29T03:33:14.112893789Z  * /agent/fsm_node/nodes/lane_controller_node: lane_controller_n...
+2021-11-29T03:33:14.112896805Z  * /agent/fsm_node/nodes/lane_filter_node: lane_filter_node/...
+2021-11-29T03:33:14.112899585Z  * /agent/fsm_node/nodes/line_detector_node: line_detector_nod...
+2021-11-29T03:33:14.112903653Z  * /agent/fsm_node/nodes/static_object_detector_node: static_object_det...
+2021-11-29T03:33:14.112906636Z  * /agent/fsm_node/nodes/vehicle_avoidance_control_node: vehicle_avoidance...
+2021-11-29T03:33:14.112909551Z  * /agent/fsm_node/nodes/vehicle_detection_node: vehicle_detection...
+2021-11-29T03:33:14.112912690Z  * /agent/fsm_node/nodes/vehicle_filter_node: vehicle_filter_no...
+2021-11-29T03:33:14.112915701Z  * /agent/fsm_node/states/LANE_FOLLOWING/active_nodes: ['anti_instagram'...
+2021-11-29T03:33:14.112918372Z  * /agent/fsm_node/states/LANE_FOLLOWING/current_status: in_progress
+2021-11-29T03:33:14.112921208Z  * /agent/fsm_node/states/LANE_FOLLOWING/lights: ['lane_following']
+2021-11-29T03:33:14.112924393Z  * /agent/fsm_node/states/LANE_FOLLOWING/transitions/obstacle_exists: OBSTACLE_STOP
+2021-11-29T03:33:14.112931066Z  * /agent/fsm_node/states/NORMAL_JOYSTICK_CONTROL/active_nodes: ['lane_filter_nod...
+2021-11-29T03:33:14.112934343Z  * /agent/fsm_node/states/NORMAL_JOYSTICK_CONTROL/current_status: implemented
+2021-11-29T03:33:14.112937110Z  * /agent/fsm_node/states/NORMAL_JOYSTICK_CONTROL/lights: ['joystick']
+2021-11-29T03:33:14.112939894Z  * /agent/fsm_node/states/OBSTACLE_STOP/active_nodes: ['anti_instagram'...
+2021-11-29T03:33:14.112943101Z  * /agent/fsm_node/states/OBSTACLE_STOP/current_status: in_progress
+2021-11-29T03:33:14.112946123Z  * /agent/fsm_node/states/OBSTACLE_STOP/lights: ['lane_following']
+2021-11-29T03:33:14.112948878Z  * /agent/fsm_node/states/OBSTACLE_STOP/transitions/obstacle_cleared: LANE_FOLLOWING
+2021-11-29T03:33:14.112951628Z  * /agent/ground_projection_node/board_h: 5
+2021-11-29T03:33:14.112954358Z  * /agent/ground_projection_node/board_w: 7
+2021-11-29T03:33:14.112957223Z  * /agent/ground_projection_node/square_size: 0.031
+2021-11-29T03:33:14.112960032Z  * /agent/ground_projection_node/x_offset: 0.191
+2021-11-29T03:33:14.112962696Z  * /agent/ground_projection_node/y_offset: 0.093
+2021-11-29T03:33:14.112965558Z  * /agent/lane_controller_node/d_offset: 0.0
+2021-11-29T03:33:14.112968183Z  * /agent/lane_controller_node/d_resolution: 0.011
+2021-11-29T03:33:14.112970853Z  * /agent/lane_controller_node/d_thres: 0.2615
+2021-11-29T03:33:14.112974018Z  * /agent/lane_controller_node/integral_bounds/d/bot: -0.3
+2021-11-29T03:33:14.112976932Z  * /agent/lane_controller_node/integral_bounds/d/top: 0.3
+2021-11-29T03:33:14.112979837Z  * /agent/lane_controller_node/integral_bounds/phi/bot: -1.2
+2021-11-29T03:33:14.112982710Z  * /agent/lane_controller_node/integral_bounds/phi/top: 1.2
+2021-11-29T03:33:14.112985608Z  * /agent/lane_controller_node/k_Id: -0.3
+2021-11-29T03:33:14.112988545Z  * /agent/lane_controller_node/k_Iphi: 0.0
+2021-11-29T03:33:14.112991417Z  * /agent/lane_controller_node/k_d: -6.0
+2021-11-29T03:33:14.112994373Z  * /agent/lane_controller_node/k_theta: -5
+2021-11-29T03:33:14.112997052Z  * /agent/lane_controller_node/omega_ff: 0
+2021-11-29T03:33:14.112999932Z  * /agent/lane_controller_node/phi_resolution: 0.051
+2021-11-29T03:33:14.113004124Z  * /agent/lane_controller_node/stop_line_slowdown/end: 0.15
+2021-11-29T03:33:14.113006947Z  * /agent/lane_controller_node/stop_line_slowdown/start: 0.6
+2021-11-29T03:33:14.113009933Z  * /agent/lane_controller_node/theta_thres: 0.523
+2021-11-29T03:33:14.113013133Z  * /agent/lane_controller_node/v_bar: 0.19
+2021-11-29T03:33:14.113015966Z  * /agent/lane_controller_node/verbose: 0
+2021-11-29T03:33:14.113018806Z  * /agent/lane_filter_node/debug: True
+2021-11-29T03:33:14.113021946Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/d_max: 0.12
+2021-11-29T03:33:14.113025009Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/d_min: -0.11
+2021-11-29T03:33:14.113030907Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/delta_d: 0.01
+2021-11-29T03:33:14.113034146Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/delta_phi: 0.05
+2021-11-29T03:33:14.113037123Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/encoder_resolution: 135
+2021-11-29T03:33:14.113040343Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/lanewidth: 0.23
+2021-11-29T03:33:14.113043339Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/linewidth_white: 0.05
+2021-11-29T03:33:14.113046208Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/linewidth_yellow: 0.025
+2021-11-29T03:33:14.113048942Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/mean_d_0: 0.0
+2021-11-29T03:33:14.113051787Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/mean_phi_0: 0
+2021-11-29T03:33:14.113054724Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/phi_max: 0.9
+2021-11-29T03:33:14.113057595Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/phi_min: -0.9
+2021-11-29T03:33:14.113060436Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/sigma_d_0: 0.3
+2021-11-29T03:33:14.113063365Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/sigma_d_mask: 0.7
+2021-11-29T03:33:14.113067012Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/sigma_phi_0: 0.3
+2021-11-29T03:33:14.113070044Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/sigma_phi_mask: 2.0
+2021-11-29T03:33:14.113073251Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/wheel_baseline: 0.1
+2021-11-29T03:33:14.113076148Z  * /agent/lane_filter_node/lane_filter_histogram_configuration/wheel_radius: 0.0318
+2021-11-29T03:33:14.113079113Z  * /agent/lane_filter_node/predict_frequency: 30.0
+2021-11-29T03:33:14.113082112Z  * /agent/line_detector_node/colors/RED/high_1: [15, 255, 255]
+2021-11-29T03:33:14.113084766Z  * /agent/line_detector_node/colors/RED/high_2: [180, 255, 255]
+2021-11-29T03:33:14.113087691Z  * /agent/line_detector_node/colors/RED/low_1: [0, 140, 100]
+2021-11-29T03:33:14.113090701Z  * /agent/line_detector_node/colors/RED/low_2: [165, 140, 100]
+2021-11-29T03:33:14.113094467Z  * /agent/line_detector_node/colors/WHITE/high: [180, 100, 255]
+2021-11-29T03:33:14.113097289Z  * /agent/line_detector_node/colors/WHITE/low: [0, 0, 150]
+2021-11-29T03:33:14.113101558Z  * /agent/line_detector_node/colors/YELLOW/high: [45, 255, 255]
+2021-11-29T03:33:14.113104453Z  * /agent/line_detector_node/colors/YELLOW/low: [25, 140, 100]
+2021-11-29T03:33:14.113107508Z  * /agent/line_detector_node/img_size: [120, 160]
+2021-11-29T03:33:14.113110341Z  * /agent/line_detector_node/line_detector_parameters/canny_aperture_size: 3
+2021-11-29T03:33:14.113113269Z  * /agent/line_detector_node/line_detector_parameters/canny_thresholds: [80, 200]
+2021-11-29T03:33:14.113119237Z  * /agent/line_detector_node/line_detector_parameters/dilation_kernel_size: 3
+2021-11-29T03:33:14.113122235Z  * /agent/line_detector_node/line_detector_parameters/hough_max_line_gap: 1
+2021-11-29T03:33:14.113125303Z  * /agent/line_detector_node/line_detector_parameters/hough_min_line_length: 3
+2021-11-29T03:33:14.113128161Z  * /agent/line_detector_node/line_detector_parameters/hough_threshold: 2
+2021-11-29T03:33:14.113130946Z  * /agent/line_detector_node/top_cutoff: 40
+2021-11-29T03:33:14.113133815Z  * /agent/line_segment_visualizer_node/veh_name: agent
+2021-11-29T03:33:14.113136703Z  * /rosdistro: noetic
+2021-11-29T03:33:14.113139671Z  * /rosversion: 1.15.13
+2021-11-29T03:33:14.113142830Z 
+2021-11-29T03:33:14.113145573Z NODES
+2021-11-29T03:33:14.113148234Z   /
+2021-11-29T03:33:14.113150962Z     agent_to_map (tf/static_transform_publisher)
+2021-11-29T03:33:14.113153832Z   /agent/
+2021-11-29T03:33:14.113156542Z     anti_instagram_node (anti_instagram/anti_instagram_node.py)
+2021-11-29T03:33:14.113159362Z     fsm_node (fsm/fsm_node.py)
+2021-11-29T03:33:14.113162417Z     ground_projection_node (ground_projection/ground_projection_node.py)
+2021-11-29T03:33:14.113165352Z     lane_controller_node (lane_control/lane_controller_node.py)
+2021-11-29T03:33:14.113168328Z     lane_filter_node (lane_filter/lane_filter_node.py)
+2021-11-29T03:33:14.113171303Z     lane_pose_visualizer_node (visualization_tools/lane_pose_visualizer_node.py)
+2021-11-29T03:33:14.113174152Z     line_detector_node (line_detector/line_detector_node.py)
+2021-11-29T03:33:14.113177133Z     line_segment_visualizer_node (visualization_tools/line_segment_visualizer_node.py)
+2021-11-29T03:33:14.113180108Z 
+2021-11-29T03:33:14.113182924Z [1mROS_MASTER_URI=http://localhost:11311[0m
+2021-11-29T03:33:14.113186081Z ]2;/code/catkin_ws/src/dt-core/packages/duckietown_demos/launch/lane_following.launch http://localhost:11311
+2021-11-29T03:33:14.113189452Z [1mprocess[agent/fsm_node-1]: started with pid [183][0m
+2021-11-29T03:33:14.113192573Z [1mprocess[agent/line_detector_node-2]: started with pid [184][0m
+2021-11-29T03:33:14.113195326Z [1mprocess[agent/ground_projection_node-3]: started with pid [185][0m
+2021-11-29T03:33:14.113198081Z [1mprocess[agent/line_segment_visualizer_node-4]: started with pid [186][0m
+2021-11-29T03:33:14.113200936Z [1mprocess[agent_to_map-5]: started with pid [187][0m
+2021-11-29T03:33:14.113203559Z [1mprocess[agent/lane_filter_node-6]: started with pid [188][0m
+2021-11-29T03:33:14.728794934Z DEBUG:commons:version: 6.2.4 *
+2021-11-29T03:33:14.800736126Z DEBUG:commons:version: 6.2.4 *
+2021-11-29T03:33:14.807168921Z DEBUG:typing:version: 6.2.3
+2021-11-29T03:33:14.857009345Z DEBUG:geometry:PyGeometry-z6 version 2.1.4 path /usr/local/lib/python3.8/dist-packages
+2021-11-29T03:33:14.858680074Z DEBUG:typing:version: 6.2.3
+2021-11-29T03:33:14.901804505Z DEBUG:geometry:PyGeometry-z6 version 2.1.4 path /usr/local/lib/python3.8/dist-packages
+2021-11-29T03:33:15.115930320Z INFO:conf_tools:[32mconf_tools 6.0.2[0m
+2021-11-29T03:33:15.122052959Z INFO:conf_tools:[32mconf_tools 6.0.2[0m
+2021-11-29T03:33:17.920726161Z + dt-exec-BG roslaunch --wait duckietown_demos set_state.launch veh:=agent state:=LANE_FOLLOWING
+2021-11-29T03:33:17.920753682Z + cmd='roslaunch --wait duckietown_demos set_state.launch veh:=agent state:=LANE_FOLLOWING'
+2021-11-29T03:33:17.920756185Z + eval 'stdbuf -o L roslaunch --wait duckietown_demos set_state.launch veh:=agent state:=LANE_FOLLOWING 1>&2 &'
+2021-11-29T03:33:17.921084971Z + dt-exec-FG roslaunch --wait agent agent_node.launch
+2021-11-29T03:33:17.921098259Z + cmd='roslaunch --wait agent agent_node.launch'
+2021-11-29T03:33:17.921100589Z + eval 'stdbuf -o L roslaunch --wait agent agent_node.launch 1>&2 '
+2021-11-29T03:33:17.921102482Z ++ stdbuf -o L roslaunch --wait duckietown_demos set_state.launch veh:=agent state:=LANE_FOLLOWING
+2021-11-29T03:33:17.921104259Z ++ stdbuf -o L roslaunch --wait agent agent_node.launch
+2021-11-29T03:33:18.629224973Z DEBUG:commons:version: 6.2.4 *
+2021-11-29T03:33:18.652597533Z DEBUG:typing:version: 6.2.3
+2021-11-29T03:33:18.670884030Z DEBUG:aido_schemas:aido-protocols version 6.0.59 path /usr/local/lib/python3.8/dist-packages
+2021-11-29T03:33:18.684287877Z DEBUG:nodes:version 6.2.13 path /usr/local/lib/python3.8/dist-packages pyparsing 2.4.6
+2021-11-29T03:33:19.274875108Z DEBUG:ipce:version 6.1.2 path /usr/local/lib/python3.8/dist-packages
+2021-11-29T03:33:19.317125554Z DEBUG:nodes_wrapper:checking implementation
+2021-11-29T03:33:19.317299083Z DEBUG:nodes_wrapper:checking implementation OK
+2021-11-29T03:33:19.318523417Z DEBUG:nodes_wrapper.ego0:run_loop
+2021-11-29T03:33:19.318531397Z   fin: /fifos/ego0-in
+2021-11-29T03:33:19.318533992Z  fout: fifo:/fifos/ego0-out
+2021-11-29T03:33:22.325473766Z DEBUG:nodes_wrapper:Fifo /fifos/ego0-out created. I will block until a reader appears.
+2021-11-29T03:33:22.325514846Z DEBUG:nodes_wrapper:Fifo reader appeared for /fifos/ego0-out.
+2021-11-29T03:33:22.326074714Z DEBUG:nodes_wrapper.ego0:Starting reading
+2021-11-29T03:33:22.326085414Z  fi_desc: /fifos/ego0-in
+2021-11-29T03:33:22.326087788Z  fo_desc: fifo:/fifos/ego0-out
+2021-11-29T03:33:25.337093725Z WARNING:nodes_wrapper:Input channel not ready after 3.0 seconds. Will re-try.
+2021-11-29T03:33:25.337135570Z > Expecting control message or one of:  {ExpectInputReceived(channel='episode_start'), ExpectInputReceived(channel='seed')}
+2021-11-29T03:33:25.337138668Z  I will warn again in 4.5 seconds.
+2021-11-29T03:33:26.251431422Z INFO:nodes_wrapper.ego0.data:07f18018a89f:ego0: init()
+2021-11-29T03:33:26.254448038Z WARNING:rosout:Calibration not found: /data/config/calibrations/camera_intrinsic/agent.yaml.
+2021-11-29T03:33:26.254479764Z  Using default instead.
+2021-11-29T03:33:26.376899484Z Just after init_node.
+2021-11-29T03:33:26.377210465Z 07f18018a89f:ego0: inited
+2021-11-29T03:33:26.619109144Z topic[/rosout] adding connection to [/rosout], count 0
+2021-11-29T03:33:29.727055641Z 07f18018a89f:ego0: Starting episode LF-zig-zag-001.
+2021-11-29T03:35:29.254054860Z Input channel not ready after 126.9 seconds. Will re-try.
+2021-11-29T03:35:29.254076832Z > Expecting control message or one of:  {ExpectInputReceived(channel='episode_start'), ExpectInputReceived(channel='seed')}
+2021-11-29T03:35:29.254080398Z  I will warn again in 6.8 seconds.
+2021-11-29T03:35:36.009095635Z Input channel not ready after 133.7 seconds. Will re-try.
+2021-11-29T03:35:36.009143775Z > Expecting control message or one of:  {ExpectInputReceived(channel='episode_start'), ExpectInputReceived(channel='seed')}
+2021-11-29T03:35:36.009151438Z  I will warn again in 10.1 seconds.
+2021-11-29T03:35:46.141524109Z Input channel not ready after 143.8 seconds. Will re-try.
+2021-11-29T03:35:46.141574846Z > Expecting control message or one of:  {ExpectInputReceived(channel='episode_start'), ExpectInputReceived(channel='seed')}
+2021-11-29T03:35:46.141580052Z  I will warn again in 15.2 seconds.
+2021-11-29T03:36:01.341526356Z Input channel not ready after 159.0 seconds. Will re-try.
+2021-11-29T03:36:01.341547354Z > Expecting control message or one of:  {ExpectInputReceived(channel='episode_start'), ExpectInputReceived(channel='seed')}
+2021-11-29T03:36:01.341551167Z  I will warn again in 22.8 seconds.
+2021-11-29T03:36:24.145019572Z Input channel not ready after 181.8 seconds. Will re-try.
+2021-11-29T03:36:24.145042800Z > Expecting control message or one of:  {ExpectInputReceived(channel='episode_start'), ExpectInputReceived(channel='seed')}
+2021-11-29T03:36:24.145046129Z  I will warn again in 34.2 seconds.
+2021-11-29T03:36:33.875286455Z 07f18018a89f:ego0: Starting episode LF-zig-zag-000.
+2021-11-29T03:38:18.023672426Z [DEBUG] [1638156795.021740]: init_node, name[/agent/lane_filter_node], pid[188]
+2021-11-29T03:38:18.023765653Z [DEBUG] [1638156795.022443]: binding to 0.0.0.0 0
+2021-11-29T03:38:18.023779414Z [DEBUG] [1638156795.023045]: bound to 0.0.0.0 43089
+2021-11-29T03:38:18.023783208Z [DEBUG] [1638156795.023673]: ... service URL is rosrpc://192.168.128.4:43089
+2021-11-29T03:38:18.023786728Z [DEBUG] [1638156795.024220]: [/agent/lane_filter_node/get_loggers]: new Service instance
+2021-11-29T03:38:18.023789962Z [DEBUG] [1638156795.025594]: ... service URL is rosrpc://192.168.128.4:43089
+2021-11-29T03:38:18.023793054Z [DEBUG] [1638156795.026477]: [/agent/lane_filter_node/set_logger_level]: new Service instance
+2021-11-29T03:38:18.023809122Z [INFO] [1638156795.027891]: [/agent/lane_filter_node] Initializing...
+2021-11-29T03:38:18.023811886Z [DEBUG] [1638156795.047870]: ... service URL is rosrpc://192.168.128.4:43089
+2021-11-29T03:38:18.023819339Z [DEBUG] [1638156795.049326]: [/agent/lane_filter_node/switch]: new Service instance
+2021-11-29T03:38:18.023822432Z [DEBUG] [1638156795.051158]: ... service URL is rosrpc://192.168.128.4:43089
+2021-11-29T03:38:18.023825135Z [DEBUG] [1638156795.051996]: [/agent/lane_filter_node/get_parameters_list]: new Service instance
+2021-11-29T03:38:18.023912154Z [DEBUG] [1638156795.053317]: ... service URL is rosrpc://192.168.128.4:43089
+2021-11-29T03:38:18.023915346Z [DEBUG] [1638156795.054039]: [/agent/lane_filter_node/request_parameters_update]: new Service instance
+2021-11-29T03:38:18.023918348Z [INFO] [1638156795.059146]: [/agent/lane_filter_node] Health status changed [STARTING] -> [STARTED]
+2021-11-29T03:38:18.023921293Z [DEBUG] [1638156795.072010]: node[/agent/lane_filter_node, http://192.168.128.4:42671/] entering spin(), pid[188]
+2021-11-29T03:38:18.023924367Z [DEBUG] [1638156795.700270]: connecting to 192.168.128.4 33395
+2021-11-29T03:38:18.023927120Z [DEBUG] [1638156806.319989]: connecting to 192.168.128.4 43931
+2021-11-29T03:38:18.023929967Z [DEBUG] [1638156806.320301]: connecting to 192.168.128.4 43931
+2021-11-29T03:38:18.023932830Z [DEBUG] [1638156806.322187]: connecting to 192.168.128.4 43931
+2021-11-29T03:38:18.023935541Z [INFO] [1638156809.768342]: Lane Filter Resetting
+2021-11-29T03:38:18.023938176Z belief2 zero
+2021-11-29T03:38:18.023940736Z belief2 zero
+2021-11-29T03:38:18.023943448Z belief2 zero
+2021-11-29T03:38:18.023946135Z belief2 zero
+2021-11-29T03:38:18.023948661Z belief2 zero
+2021-11-29T03:38:18.023951190Z belief2 zero
+2021-11-29T03:38:18.023953769Z belief2 zero
+2021-11-29T03:38:18.023956378Z belief2 zero
+2021-11-29T03:38:18.023958866Z belief2 zero
+2021-11-29T03:38:18.023961460Z belief2 zero
+2021-11-29T03:38:18.023964227Z belief2 zero
+2021-11-29T03:38:18.023967029Z belief2 zero
+2021-11-29T03:38:18.023969668Z belief2 zero
+2021-11-29T03:38:18.023972166Z belief2 zero
+2021-11-29T03:38:18.023974719Z belief2 zero
+2021-11-29T03:38:18.023979443Z belief2 zero
+2021-11-29T03:38:18.023981978Z belief2 zero
+2021-11-29T03:38:18.023984484Z belief2 zero
+2021-11-29T03:38:18.023986996Z belief2 zero
+2021-11-29T03:38:18.023989597Z belief2 zero
+2021-11-29T03:38:18.023992233Z belief2 zero
+2021-11-29T03:38:18.023994763Z belief2 zero
+2021-11-29T03:38:18.023997329Z belief2 zero
+2021-11-29T03:38:18.023999873Z belief2 zero
+2021-11-29T03:38:18.024005092Z belief2 zero
+2021-11-29T03:38:18.024007897Z belief2 zero
+2021-11-29T03:38:18.024010604Z belief2 zero
+2021-11-29T03:38:18.024013141Z belief2 zero
+2021-11-29T03:38:18.024015619Z belief2 zero
+2021-11-29T03:38:18.024018214Z belief2 zero
+2021-11-29T03:38:18.024020702Z belief2 zero
+2021-11-29T03:38:18.024023455Z belief2 zero
+2021-11-29T03:38:18.024026879Z belief2 zero
+2021-11-29T03:38:18.024029585Z belief2 zero
+2021-11-29T03:38:18.024032181Z belief2 zero
+2021-11-29T03:38:18.024034755Z belief2 zero
+2021-11-29T03:38:18.024037404Z belief2 zero
+2021-11-29T03:38:18.024039896Z belief2 zero
+2021-11-29T03:38:18.024042373Z belief2 zero
+2021-11-29T03:38:18.024044939Z belief2 zero
+2021-11-29T03:38:18.024047568Z belief2 zero
+2021-11-29T03:38:18.024050200Z belief2 zero
+2021-11-29T03:38:18.024052736Z belief2 zero
+2021-11-29T03:38:18.024055255Z belief2 zero
+2021-11-29T03:38:18.024057739Z belief2 zero
+2021-11-29T03:38:18.024060189Z belief2 zero
+2021-11-29T03:38:18.024062836Z belief2 zero
+2021-11-29T03:38:18.024065429Z belief2 zero
+2021-11-29T03:38:18.024067999Z belief2 zero
+2021-11-29T03:38:18.024070513Z belief2 zero
+2021-11-29T03:38:18.024073019Z belief2 zero
+2021-11-29T03:38:18.024075698Z belief2 zero
+2021-11-29T03:38:18.024078293Z belief2 zero
+2021-11-29T03:38:18.024080807Z belief2 zero
+2021-11-29T03:38:18.024083343Z belief2 zero
+2021-11-29T03:38:18.024086113Z belief2 zero
+2021-11-29T03:38:18.024088679Z belief2 zero
+2021-11-29T03:38:18.024091186Z belief2 zero
+2021-11-29T03:38:18.024093599Z belief2 zero
+2021-11-29T03:38:18.024096188Z belief2 zero
+2021-11-29T03:38:18.024098802Z belief2 zero
+2021-11-29T03:38:18.024101315Z belief2 zero
+2021-11-29T03:38:18.024103854Z belief2 zero
+2021-11-29T03:38:18.024106403Z belief2 zero
+2021-11-29T03:38:18.024108978Z belief2 zero
+2021-11-29T03:38:18.024111446Z belief2 zero
+2021-11-29T03:38:18.024113950Z belief2 zero
+2021-11-29T03:38:18.024116677Z belief2 zero
+2021-11-29T03:38:18.024119148Z belief2 zero
+2021-11-29T03:38:18.024121733Z belief2 zero
+2021-11-29T03:38:18.024124309Z belief2 zero
+2021-11-29T03:38:18.024127129Z belief2 zero
+2021-11-29T03:38:18.024129646Z belief2 zero
+2021-11-29T03:38:18.024132130Z belief2 zero
+2021-11-29T03:38:18.024136660Z belief2 zero
+2021-11-29T03:38:18.024139232Z belief2 zero
+2021-11-29T03:38:18.024141792Z belief2 zero
+2021-11-29T03:38:18.024144491Z belief2 zero
+2021-11-29T03:38:18.024147012Z belief2 zero
+2021-11-29T03:38:18.024149560Z belief2 zero
+2021-11-29T03:38:18.024152521Z belief2 zero
+2021-11-29T03:38:18.024155243Z belief2 zero
+2021-11-29T03:38:18.024157912Z belief2 zero
+2021-11-29T03:38:18.024160443Z belief2 zero
+2021-11-29T03:38:18.024163136Z belief2 zero
+2021-11-29T03:38:18.024165699Z belief2 zero
+2021-11-29T03:38:18.024168187Z belief2 zero
+2021-11-29T03:38:18.024170792Z belief2 zero
+2021-11-29T03:38:18.024173261Z belief2 zero
+2021-11-29T03:38:18.024175719Z belief2 zero
+2021-11-29T03:38:18.024178485Z belief2 zero
+2021-11-29T03:38:18.024181030Z belief2 zero
+2021-11-29T03:38:18.024183539Z belief2 zero
+2021-11-29T03:38:18.024186198Z belief2 zero
+2021-11-29T03:38:18.024188757Z belief2 zero
+2021-11-29T03:38:18.024191236Z belief2 zero
+2021-11-29T03:38:18.024193946Z belief2 zero
+2021-11-29T03:38:18.024196624Z belief2 zero
+2021-11-29T03:38:18.024199145Z belief2 zero
+2021-11-29T03:38:18.024201699Z belief2 zero
+2021-11-29T03:38:18.024204426Z belief2 zero
+2021-11-29T03:38:18.024207070Z belief2 zero
+2021-11-29T03:38:18.024209732Z belief2 zero
+2021-11-29T03:38:18.024212531Z belief2 zero
+2021-11-29T03:38:18.024215072Z belief2 zero
+2021-11-29T03:38:18.024217582Z belief2 zero
+2021-11-29T03:38:18.024220194Z belief2 zero
+2021-11-29T03:38:18.024222674Z belief2 zero
+2021-11-29T03:38:18.024225208Z belief2 zero
+2021-11-29T03:38:18.024227801Z belief2 zero
+2021-11-29T03:38:18.024230348Z belief2 zero
+2021-11-29T03:38:18.024232889Z belief2 zero
+2021-11-29T03:38:18.024235504Z belief2 zero
+2021-11-29T03:38:18.024237992Z belief2 zero
+2021-11-29T03:38:18.024240516Z belief2 zero
+2021-11-29T03:38:18.024243111Z belief2 zero
+2021-11-29T03:38:18.024245680Z belief2 zero
+2021-11-29T03:38:18.024248248Z belief2 zero
+2021-11-29T03:38:18.024250948Z belief2 zero
+2021-11-29T03:38:18.024253492Z belief2 zero
+2021-11-29T03:38:18.024255952Z belief2 zero
+2021-11-29T03:38:18.024258481Z belief2 zero
+2021-11-29T03:38:18.024260998Z belief2 zero
+2021-11-29T03:38:18.024265483Z belief2 zero
+2021-11-29T03:38:18.024268175Z belief2 zero
+2021-11-29T03:38:18.024270972Z belief2 zero
+2021-11-29T03:38:18.024273482Z belief2 zero
+2021-11-29T03:38:18.024276231Z belief2 zero
+2021-11-29T03:38:18.024278998Z belief2 zero
+2021-11-29T03:38:18.024281606Z belief2 zero
+2021-11-29T03:38:18.024284419Z belief2 zero
+2021-11-29T03:38:18.024286894Z belief2 zero
+2021-11-29T03:38:18.024289413Z belief2 zero
+2021-11-29T03:38:18.024291860Z belief2 zero
+2021-11-29T03:38:18.024294461Z belief2 zero
+2021-11-29T03:38:18.024297006Z belief2 zero
+2021-11-29T03:38:18.024299622Z belief2 zero
+2021-11-29T03:38:18.024302104Z belief2 zero
+2021-11-29T03:38:18.024304622Z belief2 zero
+2021-11-29T03:38:18.024307238Z belief2 zero
+2021-11-29T03:38:18.024309770Z belief2 zero
+2021-11-29T03:38:18.024312549Z belief2 zero
+2021-11-29T03:38:18.024315049Z belief2 zero
+2021-11-29T03:38:18.024317608Z belief2 zero
+2021-11-29T03:38:18.024320298Z belief2 zero
+2021-11-29T03:38:18.024322800Z belief2 zero
+2021-11-29T03:38:18.024325404Z belief2 zero
+2021-11-29T03:38:18.024327952Z belief2 zero
+2021-11-29T03:38:18.024330502Z belief2 zero
+2021-11-29T03:38:18.024332983Z belief2 zero
+2021-11-29T03:38:18.024335638Z belief2 zero
+2021-11-29T03:38:18.024338121Z belief2 zero
+2021-11-29T03:38:18.024340780Z belief2 zero
+2021-11-29T03:38:18.024343403Z belief2 zero
+2021-11-29T03:38:18.024346198Z belief2 zero
+2021-11-29T03:38:18.024348683Z belief2 zero
+2021-11-29T03:38:18.024351459Z belief2 zero
+2021-11-29T03:38:18.024353975Z belief2 zero
+2021-11-29T03:38:18.024356758Z belief2 zero
+2021-11-29T03:38:18.024359329Z belief2 zero
+2021-11-29T03:38:18.024362042Z belief2 zero
+2021-11-29T03:38:18.024364569Z belief2 zero
+2021-11-29T03:38:18.024367130Z belief2 zero
+2021-11-29T03:38:18.024369648Z belief2 zero
+2021-11-29T03:38:18.024372304Z belief2 zero
+2021-11-29T03:38:18.024374828Z belief2 zero
+2021-11-29T03:38:18.024377490Z belief2 zero
+2021-11-29T03:38:18.024380131Z belief2 zero
+2021-11-29T03:38:18.024382913Z belief2 zero
+2021-11-29T03:38:18.024385502Z belief2 zero
+2021-11-29T03:38:18.024400773Z belief2 zero
+2021-11-29T03:38:18.024404173Z belief2 zero
+2021-11-29T03:38:18.024407635Z belief2 zero
+2021-11-29T03:38:18.024412270Z belief2 zero
+2021-11-29T03:38:18.024414914Z belief2 zero
+2021-11-29T03:38:18.024417430Z belief2 zero
+2021-11-29T03:38:18.024420074Z belief2 zero
+2021-11-29T03:38:18.024422591Z [INFO] [1638156993.875719]: Lane Filter Resetting
+2021-11-29T03:38:18.024425426Z s_belief zero 0.0
+2021-11-29T03:38:18.024428099Z belief2 zero
+2021-11-29T03:38:18.024430725Z belief2 zero
+2021-11-29T03:38:18.024433208Z belief2 zero
+2021-11-29T03:38:18.024435778Z belief2 zero
+2021-11-29T03:38:18.024438354Z belief2 zero
+2021-11-29T03:38:18.024440918Z belief2 zero
+2021-11-29T03:38:18.024443441Z belief2 zero
+2021-11-29T03:38:18.024446150Z belief2 zero
+2021-11-29T03:38:18.024486233Z belief2 zero
+2021-11-29T03:38:18.024497697Z belief2 zero
+2021-11-29T03:38:18.024500898Z belief2 zero
+2021-11-29T03:38:18.024503714Z belief2 zero
+2021-11-29T03:38:18.024506424Z belief2 zero
+2021-11-29T03:38:18.024509016Z belief2 zero
+2021-11-29T03:38:18.024511745Z belief2 zero
+2021-11-29T03:38:18.024514272Z belief2 zero
+2021-11-29T03:38:18.024516919Z belief2 zero
+2021-11-29T03:38:18.024519679Z belief2 zero
+2021-11-29T03:38:18.024522351Z belief2 zero
+2021-11-29T03:38:18.024525029Z belief2 zero
+2021-11-29T03:38:18.024527780Z belief2 zero
+2021-11-29T03:38:18.024530564Z belief2 zero
+2021-11-29T03:38:18.024533282Z belief2 zero
+2021-11-29T03:38:18.024535938Z belief2 zero
+2021-11-29T03:38:18.024538585Z belief2 zero
+2021-11-29T03:38:18.024541264Z belief2 zero
+2021-11-29T03:38:18.024544001Z belief2 zero
+2021-11-29T03:38:18.024546789Z belief2 zero
+2021-11-29T03:38:18.024549658Z belief2 zero
+2021-11-29T03:38:18.024552364Z belief2 zero
+2021-11-29T03:38:18.024555036Z belief2 zero
+2021-11-29T03:38:18.024557741Z belief2 zero
+2021-11-29T03:38:18.024560364Z belief2 zero
+2021-11-29T03:38:18.024563125Z belief2 zero
+2021-11-29T03:38:18.024565864Z belief2 zero
+2021-11-29T03:38:18.024568520Z belief2 zero
+2021-11-29T03:38:18.024571275Z belief2 zero
+2021-11-29T03:38:18.024574125Z belief2 zero
+2021-11-29T03:38:18.024576868Z belief2 zero
+2021-11-29T03:38:18.024579489Z belief2 zero
+2021-11-29T03:38:18.024582137Z belief2 zero
+2021-11-29T03:38:18.024584910Z belief2 zero
+2021-11-29T03:38:18.024593996Z belief2 zero
+2021-11-29T03:38:18.024596879Z belief2 zero
+2021-11-29T03:38:18.024599478Z belief2 zero
+2021-11-29T03:38:18.024602109Z belief2 zero
+2021-11-29T03:38:18.024604759Z belief2 zero
+2021-11-29T03:38:18.024607649Z belief2 zero
+2021-11-29T03:38:18.024610338Z belief2 zero
+2021-11-29T03:38:18.024613068Z belief2 zero
+2021-11-29T03:38:18.024615778Z belief2 zero
+2021-11-29T03:38:18.024618389Z belief2 zero
+2021-11-29T03:38:18.024621135Z belief2 zero
+2021-11-29T03:38:18.024623811Z belief2 zero
+2021-11-29T03:38:18.024626658Z belief2 zero
+2021-11-29T03:38:18.024629404Z belief2 zero
+2021-11-29T03:38:18.024632091Z belief2 zero
+2021-11-29T03:38:18.024635002Z belief2 zero
+2021-11-29T03:38:18.024637868Z belief2 zero
+2021-11-29T03:38:18.024640565Z belief2 zero
+2021-11-29T03:38:18.024643234Z belief2 zero
+2021-11-29T03:38:18.024645868Z belief2 zero
+2021-11-29T03:38:18.024648447Z belief2 zero
+2021-11-29T03:38:18.024651161Z belief2 zero
+2021-11-29T03:38:18.024653940Z belief2 zero
+2021-11-29T03:38:18.024656629Z belief2 zero
+2021-11-29T03:38:18.024659252Z belief2 zero
+2021-11-29T03:38:18.024661893Z belief2 zero
+2021-11-29T03:38:18.024664554Z belief2 zero
+2021-11-29T03:38:18.024667216Z belief2 zero
+2021-11-29T03:38:18.024669797Z belief2 zero
+2021-11-29T03:38:18.024672434Z belief2 zero
+2021-11-29T03:38:18.024675066Z belief2 zero
+2021-11-29T03:38:18.024677691Z belief2 zero
+2021-11-29T03:38:18.024680406Z belief2 zero
+2021-11-29T03:38:18.024682996Z belief2 zero
+2021-11-29T03:38:18.024685552Z belief2 zero
+2021-11-29T03:38:18.024688057Z belief2 zero
+2021-11-29T03:38:18.024690709Z belief2 zero
+2021-11-29T03:38:18.024693436Z belief2 zero
+2021-11-29T03:38:18.024696112Z belief2 zero
+2021-11-29T03:38:18.024698741Z belief2 zero
+2021-11-29T03:38:18.024701329Z belief2 zero
+2021-11-29T03:38:18.024703938Z belief2 zero
+2021-11-29T03:38:18.024706605Z belief2 zero
+2021-11-29T03:38:18.024709228Z belief2 zero
+2021-11-29T03:38:18.024711983Z belief2 zero
+2021-11-29T03:38:18.024714659Z belief2 zero
+2021-11-29T03:38:18.024717252Z belief2 zero
+2021-11-29T03:38:18.024719817Z belief2 zero
+2021-11-29T03:38:18.024722470Z belief2 zero
+2021-11-29T03:38:18.024725163Z s_belief zero 0.0
+2021-11-29T03:38:18.024730040Z belief2 zero
+2021-11-29T03:38:18.024732856Z belief2 zero
+2021-11-29T03:38:18.024735618Z belief2 zero
+2021-11-29T03:38:18.024738292Z belief2 zero
+2021-11-29T03:38:18.024740895Z belief2 zero
+2021-11-29T03:38:18.024743525Z belief2 zero
+2021-11-29T03:38:18.024746168Z belief2 zero
+2021-11-29T03:38:18.024748856Z belief2 zero
+2021-11-29T03:38:18.024751616Z belief2 zero
+2021-11-29T03:38:18.024754173Z belief2 zero
+2021-11-29T03:38:18.024756867Z belief2 zero
+2021-11-29T03:38:18.024759525Z belief2 zero
+2021-11-29T03:38:18.024762376Z belief2 zero
+2021-11-29T03:38:18.024765133Z belief2 zero
+2021-11-29T03:38:18.024767766Z belief2 zero
+2021-11-29T03:38:18.024770428Z s_belief zero 0.0
+2021-11-29T03:38:18.024773048Z belief2 zero
+2021-11-29T03:38:18.024775743Z belief2 zero
+2021-11-29T03:38:18.024778400Z s_belief zero 0.0
+2021-11-29T03:38:18.024781027Z belief2 zero
+2021-11-29T03:38:18.024783702Z belief2 zero
+2021-11-29T03:38:18.024786386Z s_belief zero 0.0
+2021-11-29T03:38:18.024789014Z belief2 zero
+2021-11-29T03:38:18.024791672Z s_belief zero 0.0
+2021-11-29T03:38:18.024794344Z belief2 zero
+2021-11-29T03:38:18.024797084Z belief2 zero
+2021-11-29T03:38:18.024799805Z s_belief zero 0.0
+2021-11-29T03:38:18.024802425Z belief2 zero
+2021-11-29T03:38:18.024805069Z s_belief zero 0.0
+2021-11-29T03:38:18.024807872Z belief2 zero
+2021-11-29T03:38:18.024810529Z s_belief zero 0.0
+2021-11-29T03:38:18.024813245Z belief2 zero
+2021-11-29T03:38:18.024815892Z belief2 zero
+2021-11-29T03:38:18.024818492Z s_belief zero 0.0
+2021-11-29T03:38:18.024821065Z belief2 zero
+2021-11-29T03:38:18.024823674Z belief2 zero
+2021-11-29T03:38:18.024826259Z s_belief zero 0.0
+2021-11-29T03:38:18.024828886Z s_belief zero 0.0
+2021-11-29T03:38:18.024831500Z belief2 zero
+2021-11-29T03:38:18.024834219Z belief2 zero
+2021-11-29T03:38:18.024836871Z s_belief zero 0.0
+2021-11-29T03:38:18.024839461Z belief2 zero
+2021-11-29T03:38:18.024842104Z belief2 zero
+2021-11-29T03:38:18.024844858Z s_belief zero 0.0
+2021-11-29T03:38:18.024847634Z s_belief zero 0.0
+2021-11-29T03:38:18.024850300Z belief2 zero
+2021-11-29T03:38:18.024852948Z belief2 zero
+2021-11-29T03:38:18.024855615Z belief2 zero
+2021-11-29T03:38:18.024860377Z s_belief zero 0.0
+2021-11-29T03:38:18.024863183Z s_belief zero 0.0
+2021-11-29T03:38:18.024865895Z belief2 zero
+2021-11-29T03:38:18.024868566Z belief2 zero
+2021-11-29T03:38:18.024871140Z s_belief zero 0.0
+2021-11-29T03:38:18.024873758Z belief2 zero
+2021-11-29T03:38:18.024876487Z belief2 zero
+2021-11-29T03:38:18.024879131Z s_belief zero 0.0
+2021-11-29T03:38:18.024881759Z s_belief zero 0.0
+2021-11-29T03:38:18.024884406Z belief2 zero
+2021-11-29T03:38:18.024887111Z s_belief zero 0.0
+2021-11-29T03:38:18.024889684Z belief2 zero
+2021-11-29T03:38:18.024892276Z s_belief zero 0.0
+2021-11-29T03:38:18.024894964Z s_belief zero 0.0
+2021-11-29T03:38:18.024897661Z belief2 zero
+2021-11-29T03:38:18.024900456Z belief2 zero
+2021-11-29T03:38:18.024903724Z s_belief zero 0.0
+2021-11-29T03:38:18.024906474Z belief2 zero
+2021-11-29T03:38:18.024909178Z s_belief zero 0.0
+2021-11-29T03:38:18.024911901Z belief2 zero
+2021-11-29T03:38:18.024914472Z belief2 zero
+2021-11-29T03:38:18.024917848Z s_belief zero 0.0
+2021-11-29T03:38:18.024920491Z belief2 zero
+2021-11-29T03:38:18.024923176Z belief2 zero
+2021-11-29T03:38:18.024925907Z s_belief zero 0.0
+2021-11-29T03:38:18.024928528Z belief2 zero
+2021-11-29T03:38:18.024931162Z s_belief zero 0.0
+2021-11-29T03:38:18.024933754Z belief2 zero
+2021-11-29T03:38:18.024936303Z belief2 zero
+2021-11-29T03:38:18.024938783Z s_belief zero 0.0
+2021-11-29T03:38:18.024941474Z belief2 zero
+2021-11-29T03:38:18.024944147Z s_belief zero 0.0
+2021-11-29T03:38:18.024946488Z belief2 zero
+2021-11-29T03:38:18.024949143Z s_belief zero 0.0
+2021-11-29T03:38:18.024951757Z belief2 zero
+2021-11-29T03:38:18.024954471Z s_belief zero 0.0
+2021-11-29T03:38:18.024957186Z s_belief zero 0.0
+2021-11-29T03:38:18.024959757Z belief2 zero
+2021-11-29T03:38:18.024962316Z belief2 zero
+2021-11-29T03:38:18.024964981Z belief2 zero
+2021-11-29T03:38:18.024967616Z s_belief zero 0.0
+2021-11-29T03:38:18.024970165Z belief2 zero
+2021-11-29T03:38:18.024972871Z s_belief zero 0.0
+2021-11-29T03:38:18.024975487Z belief2 zero
+2021-11-29T03:38:18.024978130Z belief2 zero
+2021-11-29T03:38:18.024980800Z s_belief zero 0.0
+2021-11-29T03:38:18.024983441Z s_belief zero 0.0
+2021-11-29T03:38:18.024986033Z s_belief zero 0.0
+2021-11-29T03:38:18.024990692Z belief2 zero
+2021-11-29T03:38:18.024993457Z belief2 zero
+2021-11-29T03:38:18.024995989Z s_belief zero 0.0
+2021-11-29T03:38:18.024998668Z belief2 zero
+2021-11-29T03:38:18.025001362Z belief2 zero
+2021-11-29T03:38:18.025004122Z s_belief zero 0.0
+2021-11-29T03:38:18.025006754Z belief2 zero
+2021-11-29T03:38:18.025009448Z belief2 zero
+2021-11-29T03:38:18.025012080Z s_belief zero 0.0
+2021-11-29T03:38:18.025014755Z s_belief zero 0.0
+2021-11-29T03:38:18.025017413Z belief2 zero
+2021-11-29T03:38:18.025020156Z s_belief zero 0.0
+2021-11-29T03:38:18.025022785Z belief2 zero
+2021-11-29T03:38:18.025025492Z belief2 zero
+2021-11-29T03:38:18.025028194Z belief2 zero
+2021-11-29T03:38:18.025030939Z s_belief zero 0.0
+2021-11-29T03:38:18.025033650Z belief2 zero
+2021-11-29T03:38:18.025036222Z s_belief zero 0.0
+2021-11-29T03:38:18.025038877Z belief2 zero
+2021-11-29T03:38:18.025041480Z s_belief zero 0.0
+2021-11-29T03:38:18.025044186Z belief2 zero
+2021-11-29T03:38:18.025046765Z s_belief zero 0.0
+2021-11-29T03:38:18.025049450Z belief2 zero
+2021-11-29T03:38:18.025052147Z s_belief zero 0.0
+2021-11-29T03:38:18.025054780Z belief2 zero
+2021-11-29T03:38:18.025057413Z belief2 zero
+2021-11-29T03:38:18.025060094Z s_belief zero 0.0
+2021-11-29T03:38:18.025062698Z belief2 zero
+2021-11-29T03:38:18.025065217Z s_belief zero 0.0
+2021-11-29T03:38:18.025067999Z belief2 zero
+2021-11-29T03:38:18.025070665Z belief2 zero
+2021-11-29T03:38:18.025073284Z s_belief zero 0.0
+2021-11-29T03:38:18.025075905Z belief2 zero
+2021-11-29T03:38:18.025078575Z s_belief zero 0.0
+2021-11-29T03:38:18.025081201Z belief2 zero
+2021-11-29T03:38:18.025083705Z belief2 zero
+2021-11-29T03:38:18.025086462Z s_belief zero 0.0
+2021-11-29T03:38:18.025089114Z belief2 zero
+2021-11-29T03:38:18.025091721Z belief2 zero
+2021-11-29T03:38:18.025094265Z s_belief zero 0.0
+2021-11-29T03:38:18.025096875Z belief2 zero
+2021-11-29T03:38:18.025099577Z s_belief zero 0.0
+2021-11-29T03:38:18.025102375Z belief2 zero
+2021-11-29T03:38:18.025104971Z s_belief zero 0.0
+2021-11-29T03:38:18.025107544Z belief2 zero
+2021-11-29T03:38:18.025112529Z belief2 zero
+2021-11-29T03:38:18.025115257Z s_belief zero 0.0
+2021-11-29T03:38:18.025117818Z belief2 zero
+2021-11-29T03:38:18.025120358Z s_belief zero 0.0
+2021-11-29T03:38:18.025124879Z belief2 zero
+2021-11-29T03:38:18.025127642Z belief2 zero
+2021-11-29T03:38:18.025130311Z s_belief zero 0.0
+2021-11-29T03:38:18.025133072Z belief2 zero
+2021-11-29T03:38:18.025135668Z s_belief zero 0.0
+2021-11-29T03:38:18.025138293Z belief2 zero
+2021-11-29T03:38:18.025140946Z s_belief zero 0.0
+2021-11-29T03:38:18.025144198Z belief2 zero
+2021-11-29T03:38:18.025146955Z s_belief zero 0.0
+2021-11-29T03:38:18.025149652Z belief2 zero
+2021-11-29T03:38:18.025152295Z s_belief zero 0.0
+2021-11-29T03:38:18.025155044Z belief2 zero
+2021-11-29T03:38:18.025157678Z belief2 zero
+2021-11-29T03:38:18.025160227Z belief2 zero
+2021-11-29T03:38:18.025163708Z s_belief zero 0.0
+2021-11-29T03:38:18.025166426Z s_belief zero 0.0
+2021-11-29T03:38:18.025169176Z belief2 zero
+2021-11-29T03:38:18.025171762Z belief2 zero
+2021-11-29T03:38:18.025174417Z s_belief zero 0.0
+2021-11-29T03:38:18.025177106Z belief2 zero
+2021-11-29T03:38:18.025179810Z belief2 zero
+2021-11-29T03:38:18.025182446Z s_belief zero 0.0
+2021-11-29T03:38:18.025185106Z s_belief zero 0.0
+2021-11-29T03:38:18.025187683Z belief2 zero
+2021-11-29T03:38:18.025190332Z belief2 zero
+2021-11-29T03:38:18.025193646Z belief2 zero
+2021-11-29T03:38:18.025196304Z s_belief zero 0.0
+2021-11-29T03:38:18.025198889Z belief2 zero
+2021-11-29T03:38:18.025201528Z s_belief zero 0.0
+2021-11-29T03:38:18.025204184Z belief2 zero
+2021-11-29T03:38:18.025206816Z s_belief zero 0.0
+2021-11-29T03:38:18.025209361Z belief2 zero
+2021-11-29T03:38:18.025212062Z belief2 zero
+2021-11-29T03:38:18.025214683Z s_belief zero 0.0
+2021-11-29T03:38:18.025217396Z belief2 zero
+2021-11-29T03:38:18.025220083Z s_belief zero 0.0
+2021-11-29T03:38:18.025222807Z belief2 zero
+2021-11-29T03:38:18.025225552Z s_belief zero 0.0
+2021-11-29T03:38:18.025228225Z belief2 zero
+2021-11-29T03:38:18.025230777Z s_belief zero 0.0
+2021-11-29T03:38:18.025233411Z belief2 zero
+2021-11-29T03:38:18.025236068Z belief2 zero
+2021-11-29T03:38:18.025238759Z s_belief zero 0.0
+2021-11-29T03:38:18.025241449Z belief2 zero
+2021-11-29T03:38:18.025244146Z s_belief zero 0.0
+2021-11-29T03:38:18.025246955Z belief2 zero
+2021-11-29T03:38:18.025249596Z s_belief zero 0.0
+2021-11-29T03:38:18.025252313Z belief2 zero
+2021-11-29T03:38:18.025256984Z belief2 zero
+2021-11-29T03:38:18.025259673Z belief2 zero
+2021-11-29T03:38:18.025262231Z s_belief zero 0.0
+2021-11-29T03:38:18.025264774Z s_belief zero 0.0
+2021-11-29T03:38:18.025267404Z belief2 zero
+2021-11-29T03:38:18.025270071Z belief2 zero
+2021-11-29T03:38:18.025272843Z s_belief zero 0.0
+2021-11-29T03:38:58.714371975Z Input channel not ready after 336.4 seconds. Will re-try.
+2021-11-29T03:38:58.714391534Z > Expecting control message or one of:  {ExpectInputReceived(channel='episode_start'), ExpectInputReceived(channel='seed')}
+2021-11-29T03:38:58.714394578Z  I will warn again in 51.3 seconds.
+2021-11-29T03:39:35.668938114Z 07f18018a89f:ego0: Starting episode LF-zig-zag-002.
+2021-11-29T03:42:20.223720535Z Input channel not ready after 537.9 seconds. Will re-try.
+2021-11-29T03:42:20.223745558Z > Expecting control message or one of:  {ExpectInputReceived(channel='episode_start'), ExpectInputReceived(channel='seed')}
+2021-11-29T03:42:20.223748760Z  I will warn again in 76.9 seconds.
+2021-11-29T03:42:39.106493550Z 07f18018a89f:ego0: finish()
+2021-11-29T03:42:39.106505764Z signal_shutdown [My job here is done.]
+2021-11-29T03:42:39.108969568Z topic[/agent/camera_node/image/compressed] removing connection to /agent/line_detector_node
+2021-11-29T03:42:39.109107713Z topic[/agent/camera_node/image/compressed] removing connection to /agent/anti_instagram_node
+2021-11-29T03:42:39.109237599Z topic[/agent/camera_node/camera_info] removing connection to /agent/ground_projection_node
+2021-11-29T03:42:39.109354783Z topic[/agent/episode_start] removing connection to /agent/lane_filter_node
+2021-11-29T03:42:39.109472350Z topic[/agent/left_wheel_encoder_node/tick] removing connection to /agent/lane_filter_node
+2021-11-29T03:42:39.109627468Z topic[/agent/right_wheel_encoder_node/tick] removing connection to /agent/lane_filter_node
+2021-11-29T03:42:39.109751017Z topic[/rosout] removing connection to /rosout
+2021-11-29T03:42:39.110157971Z topic[/agent/wheels_driver_node/wheels_cmd] removing connection to http://192.168.128.4:41537/
+2021-11-29T03:42:39.110237605Z My job here is done.
+2021-11-29T03:42:39.111198294Z [/agent/wheels_driver_node/wheels_cmd] failed to receive incoming message : unable to receive data from sender, check sender's logs for details
+2021-11-29T03:42:39.708348478Z benchmark data
+2021-11-29T03:42:39.708368582Z  stats: |┌  0.0%   init  0.127
+2021-11-29T03:42:39.708371525Z         |┌  0.1%   :deserialization  0.000 7210.0x
+2021-11-29T03:42:39.708373315Z         |┌  0.0%   seed  0.000
+2021-11-29T03:42:39.708375069Z         |┌  0.0%   episode_start  0.000    3.0x
+2021-11-29T03:42:39.708376894Z         |┌  0.2%   observations  0.000 3603.0x
+2021-11-29T03:42:39.708378628Z         |┌  0.3%   get_commands  0.000 3603.0x
+2021-11-29T03:42:39.708394277Z         |│ ┌ 38.3%   :serialization  0.000
+2021-11-29T03:42:39.708397684Z         |│ ┌ 24.3%   :timing-serialization  0.000
+2021-11-29T03:42:39.708399930Z         |│ ┌ 37.5%   self  0.000
+2021-11-29T03:42:39.708402272Z         |┌  0.1%   finish  0.602
+2021-11-29T03:42:39.708881601Z benchmark meta
+2021-11-29T03:42:39.708894025Z  stats: |┌  0.0%   :deserialization  0.000
+2021-11-29T03:42:39.708896783Z         |┌  0.0%   describe_protocol  0.007
+2021-11-29T03:42:39.708898560Z         |│ ┌ 94.7%   :serialization  0.006
+2021-11-29T03:42:39.708900532Z         |│ ┌  2.4%   :timing-serialization  0.000
+2021-11-29T03:42:39.708902244Z         |│ ┌  2.9%   self  0.000
+2021-11-29T03:42:39.708904024Z [DEBUG] [1638156806.372587]: init_node, name[/agent_node], pid[421]
+2021-11-29T03:42:39.708905751Z [DEBUG] [1638156806.373311]: ... service URL is rosrpc://192.168.128.4:43931
+2021-11-29T03:42:39.708907337Z [DEBUG] [1638156806.373968]: [/agent_node/get_loggers]: new Service instance
+2021-11-29T03:42:39.708908923Z [DEBUG] [1638156806.375116]: ... service URL is rosrpc://192.168.128.4:43931
+2021-11-29T03:42:39.708910524Z [DEBUG] [1638156806.375543]: [/agent_node/set_logger_level]: new Service instance
+2021-11-29T03:42:39.708912108Z [INFO] [1638156806.376347]: Just after init_node.
+2021-11-29T03:42:39.708913694Z [DEBUG] [1638157359.109896]: [/agent/wheels_driver_node/wheels_cmd] failed to receive incoming message : unable to receive data from sender, check sender's logs for details
+2021-11-29T03:42:39.709108973Z signal_shutdown [atexit]
+2021-11-29T03:42:39.992081076Z [31m================================================================================REQUIRED process [agent_node-1] has died!
+2021-11-29T03:42:39.992109282Z process has finished cleanly
+2021-11-29T03:42:39.992113384Z log file: /tmp/log/14e4a49a-50c5-11ec-bfac-0242c0a88004/agent_node-1*.log
+2021-11-29T03:42:39.992115902Z Initiating shutdown!
+2021-11-29T03:42:39.992118248Z ================================================================================[0m
+2021-11-29T03:42:39.992121172Z master has started, initiating launch
+2021-11-29T03:42:39.992123484Z ... logging to /tmp/log/14e4a49a-50c5-11ec-bfac-0242c0a88004/roslaunch-07f18018a89f-392.log
+2021-11-29T03:42:39.992125856Z Checking log directory for disk usage. This may take a while.
+2021-11-29T03:42:39.992128214Z Press Ctrl-C to interrupt
+2021-11-29T03:42:39.992130738Z Done checking log file disk usage. Usage is <1GB.
+2021-11-29T03:42:39.992133396Z ]2;/code/submission_ws/src/agent/launch/agent_node.launch
+2021-11-29T03:42:39.992135871Z [1mstarted roslaunch server http://192.168.128.4:39219/[0m
+2021-11-29T03:42:39.992138521Z 
+2021-11-29T03:42:39.992141010Z SUMMARY
+2021-11-29T03:42:39.992150316Z ========
+2021-11-29T03:42:39.992152693Z 
+2021-11-29T03:42:39.992155036Z PARAMETERS
+2021-11-29T03:42:39.992157032Z  * /rosdistro: noetic
+2021-11-29T03:42:39.992159078Z  * /rosversion: 1.15.13
+2021-11-29T03:42:39.992161155Z 
+2021-11-29T03:42:39.992163181Z NODES
+2021-11-29T03:42:39.992165220Z   /
+2021-11-29T03:42:39.992167268Z     agent_node (agent/solution.py)
+2021-11-29T03:42:39.992169292Z 
+2021-11-29T03:42:39.992171226Z [1mROS_MASTER_URI=http://localhost:11311[0m
+2021-11-29T03:42:39.992173331Z ]2;/code/submission_ws/src/agent/launch/agent_node.launch http://localhost:11311
+2021-11-29T03:42:39.992175614Z [1mprocess[agent_node-1]: started with pid [421][0m
+2021-11-29T03:42:39.992177765Z [agent_node-1] killing on exit
+2021-11-29T03:42:39.992179830Z shutting down processing monitor...
+2021-11-29T03:42:39.992181990Z ... shutting down processing monitor complete
+2021-11-29T03:42:39.992184146Z [1mdone[0m
+2021-11-29T03:42:40.116665877Z + rostopic list
+2021-11-29T03:42:40.356086030Z /agent/anti_instagram_node/switch
+2021-11-29T03:42:40.356107261Z /agent/anti_instagram_node/thresholds
+2021-11-29T03:42:40.356109614Z /agent/auto_calibration_calculation_node/car_cmd
+2021-11-29T03:42:40.356111242Z /agent/auto_calibration_node/car_cmd
+2021-11-29T03:42:40.356112752Z /agent/camera_node/camera_info
+2021-11-29T03:42:40.356114317Z /agent/camera_node/framerate_high_switch
+2021-11-29T03:42:40.356116021Z /agent/camera_node/image/compressed
+2021-11-29T03:42:40.356117590Z /agent/car_cmd_switch_node/cmd
+2021-11-29T03:42:40.356119065Z /agent/coordinator_node/car_cmd
+2021-11-29T03:42:40.356120506Z /agent/decoder_node/switch
+2021-11-29T03:42:40.356121978Z /agent/diagnostics/code/profiling
+2021-11-29T03:42:40.356123524Z /agent/diagnostics/ros/links
+2021-11-29T03:42:40.356124977Z /agent/diagnostics/ros/node
+2021-11-29T03:42:40.356126508Z /agent/diagnostics/ros/parameters
+2021-11-29T03:42:40.356128031Z /agent/diagnostics/ros/topics
+2021-11-29T03:42:40.356129561Z /agent/duckiebot_il_lane_following/car_cmd
+2021-11-29T03:42:40.356131133Z /agent/episode_start
+2021-11-29T03:42:40.356132660Z /agent/fsm_node/mode
+2021-11-29T03:42:40.356134413Z /agent/ground_projection_node/debug/ground_projection_image/compressed
+2021-11-29T03:42:40.356136472Z /agent/ground_projection_node/lineseglist_out
+2021-11-29T03:42:40.356138187Z /agent/joy
+2021-11-29T03:42:40.356139656Z /agent/joy_mapper_node/car_cmd
+2021-11-29T03:42:40.356141152Z /agent/joy_mapper_node/joystick_override
+2021-11-29T03:42:40.356148255Z /agent/kinematics_node/velocity
+2021-11-29T03:42:40.356151332Z /agent/lane_controller_node/car_cmd
+2021-11-29T03:42:40.356152857Z /agent/lane_controller_node/intersection_navigation_pose
+2021-11-29T03:42:40.356154309Z /agent/lane_controller_node/switch
+2021-11-29T03:42:40.356155709Z /agent/lane_filter_node/belief_img
+2021-11-29T03:42:40.356157166Z /agent/lane_filter_node/lane_pose
+2021-11-29T03:42:40.356158586Z /agent/lane_filter_node/seglist_filtered
+2021-11-29T03:42:40.356160008Z /agent/lane_filter_node/switch
+2021-11-29T03:42:40.356161478Z /agent/lane_pose_visualizer_node/lane_pose_markers
+2021-11-29T03:42:40.356163004Z /agent/lane_recovery_node/car_cmd
+2021-11-29T03:42:40.356164409Z /agent/lane_supervisor_node/car_cmd
+2021-11-29T03:42:40.356165949Z /agent/left_wheel_encoder_node/tick
+2021-11-29T03:42:40.356167439Z /agent/line_detector_node/debug/edges/compressed
+2021-11-29T03:42:40.356169368Z /agent/line_detector_node/debug/maps/compressed
+2021-11-29T03:42:40.356170838Z /agent/line_detector_node/debug/ranges_HS
+2021-11-29T03:42:40.356172335Z /agent/line_detector_node/debug/ranges_HV
+2021-11-29T03:42:40.356173924Z /agent/line_detector_node/debug/ranges_SV
+2021-11-29T03:42:40.356175423Z /agent/line_detector_node/debug/segments/compressed
+2021-11-29T03:42:40.356176854Z /agent/line_detector_node/segment_list
+2021-11-29T03:42:40.356178328Z /agent/line_detector_node/switch
+2021-11-29T03:42:40.356179952Z /agent/line_segment_visualizer_node/filtered_segment_list_markers
+2021-11-29T03:42:40.356181471Z /agent/line_segment_visualizer_node/segment_list_markers
+2021-11-29T03:42:40.356182881Z /agent/right_wheel_encoder_node/tick
+2021-11-29T03:42:40.356184329Z /agent/road_anomaly_watcher/obstacle_distance
+2021-11-29T03:42:40.356185748Z /agent/road_anomaly_watcher/obstacle_exists
+2021-11-29T03:42:40.356187150Z /agent/simple_stop_controller_node/car_cmd
+2021-11-29T03:42:40.356188633Z /agent/static_object_detector_node/switch
+2021-11-29T03:42:40.356190179Z /agent/stop_line_filter_node/stop_line_reading
+2021-11-29T03:42:40.356191661Z /agent/vehicle_avoidance_control_node/switch
+2021-11-29T03:42:40.356193451Z /agent/vehicle_detection_node/switch
+2021-11-29T03:42:40.356194868Z /agent/vehicle_filter_node/switch
+2021-11-29T03:42:40.356196441Z /agent/velocity_to_pose_node/pose
+2021-11-29T03:42:40.356197898Z /agent/wheels_driver_node/emergency_stop
+2021-11-29T03:42:40.356199355Z /agent/wheels_driver_node/wheels_cmd
+2021-11-29T03:42:40.356200802Z /rosout
+2021-11-29T03:42:40.356202265Z /rosout_agg
+2021-11-29T03:42:40.356203732Z /tf
+2021-11-29T03:42:40.498171725Z + copy-ros-logs
+2021-11-29T03:42:40.498208337Z + find /tmp/log -type f -name '*.log' -exec cp '{}' /challenges/challenge-solution-output ';'
+
+Container terminated with 0
