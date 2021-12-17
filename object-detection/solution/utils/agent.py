@@ -100,7 +100,8 @@ class PurePursuitPolicy:
         if velocity_slow_down < 0.2:
             velocity = 0
             omega = 0
-
+            print('stop')
+        print('velocity_slow_down'+str(velocity_slow_down)+',velocity' + str(velocity) + ',omega' + str(omega))
         action = [velocity, omega * STEERING_GAIN]
 
         return action
